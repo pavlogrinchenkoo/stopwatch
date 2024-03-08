@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomStreamBuilder<T> extends StatefulWidget {
-  const CustomStreamBuilder({required this.bloc, required this.builder, super.key});
+  const CustomStreamBuilder(
+      {required this.bloc, required this.builder, super.key});
 
   final dynamic bloc;
   final dynamic builder;

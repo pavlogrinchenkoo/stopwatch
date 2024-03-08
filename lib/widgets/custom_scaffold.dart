@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:korsun/generated/assets.gen.dart';
+import 'package:quad_timer/generated/assets.gen.dart';
+import 'package:quad_timer/style.dart';
+
 
 
 class CustomScaffold extends StatelessWidget {
@@ -13,17 +15,10 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: BC.white,
       appBar: appBar,
       bottomNavigationBar: bottomNavigationBar,
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: Assets.images.bg.image().image,
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: SafeArea(child: body),
-      ),
+      body: SafeArea(child: body),
     );
   }
 }

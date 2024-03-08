@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class Space {
   static Widget get w52 => const _SpaceWidget(width: 52);
 
+  static Widget get w24 => const _SpaceWidget(width: 24);
+
   static Widget get w22 => const _SpaceWidget(width: 22);
 
   static Widget get w20 => const _SpaceWidget(width: 20);
@@ -18,6 +20,8 @@ class Space {
   static Widget get h96 => const _SpaceWidget(height: 96);
 
   static Widget get h32 => const _SpaceWidget(height: 32);
+
+  static Widget get h20 => const _SpaceWidget(height: 20);
 
   static Widget get h16 => const _SpaceWidget(height: 16);
 

@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:korsun/style.dart';
+import 'package:quad_timer/style.dart';
 
 class CustomSwitch extends StatelessWidget {
   final bool value;
