@@ -199,10 +199,15 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
     cache.removeTimeCue();
     init();
   }
+
+  void showButton() {
+    setState(currentState.copyWith(isShowButton: !(currentState.isShowButton)));
+  }
 }
 
 class ScreenState {
   final bool loading;
+  final bool isShowButton;
   final String vaultCue;
   final String beamCue;
   final String barsCue;
@@ -214,6 +219,7 @@ class ScreenState {
 
   ScreenState({
     this.loading = true,
+    this.isShowButton = false,
     this.vaultCue = '00:00:00',
     this.beamCue = '00:00:00',
     this.barsCue = '00:00:00',
@@ -226,6 +232,7 @@ class ScreenState {
 
   ScreenState copyWith(
       {bool? loading,
+      bool? isShowButton,
       String? vaultCue,
       String? beamCue,
       String? barsCue,
@@ -236,6 +243,7 @@ class ScreenState {
       String? floorClear}) {
     return ScreenState(
       loading: loading ?? this.loading,
+      isShowButton: isShowButton ?? this.isShowButton,
       vaultCue: vaultCue ?? this.vaultCue,
       beamCue: beamCue ?? this.beamCue,
       barsCue: barsCue ?? this.barsCue,

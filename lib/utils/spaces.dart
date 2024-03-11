@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Space {
-  static Widget get w132 => const _SpaceWidget(width: 132);
+  static Widget get w167 => const _SpaceWidget(width: 167);
 
   static Widget get w52 => const _SpaceWidget(width: 52);
+
+  static Widget get w32 => const _SpaceWidget(width: 32);
 
   static Widget get w24 => const _SpaceWidget(width: 24);
 

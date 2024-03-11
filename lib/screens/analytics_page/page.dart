@@ -47,17 +47,25 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 60),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Space.w132,
+                          (state.isShowButton) ? Space.w167 : Space.w32,
                           const Spacer(),
                           Text('Analytics', style: BS.med120),
                           const Spacer(),
-                          Builder(builder: (context) {
-                            return CustomTwoButton(
-                              onDownload: () => bloc.downloadFile(context),
-                              onShare: () => bloc.shareFile(context),
-                            );
-                          }),
+                          if (state.isShowButton)
+                            Builder(builder: (context) {
+                              return CustomTwoButton(
+                                onDownload: () => bloc.downloadFile(context),
+                                onShare: () => bloc.shareFile(context),
+                              );
+                            }),
+                          Space.w8,
+                          InkWell(
+                            onTap: () => bloc.showButton(),
+                            child: Icon(Icons.more_vert,
+                                color: BC.black, size: 32),
+                          ),
                         ],
                       ),
                     ),
