@@ -52,6 +52,14 @@ abstract class BS {
     letterSpacing: 0,
   );
 
+  static TextStyle get med16 => const TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+    height: 1.2,
+    letterSpacing: 0.0,
+  );
+
   static TextStyle get reg90 => const   TextStyle(
     fontFamily: 'Roboto',
     fontSize: 90,

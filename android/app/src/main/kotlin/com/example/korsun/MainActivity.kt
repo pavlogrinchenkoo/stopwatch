@@ -1,4 +1,4 @@
-package com.vpn.program
+package com.timer.program
 
 import io.flutter.embedding.android.FlutterActivity
 

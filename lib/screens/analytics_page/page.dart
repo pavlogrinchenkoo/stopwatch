@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:quad_timer/style.dart';
 import 'package:quad_timer/utils/custom_stream_builder.dart';
 import 'package:quad_timer/utils/spaces.dart';
@@ -43,7 +44,23 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Space.h32,
-                    Text('Analytics', style: BS.med120),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 60),
+                      child: Row(
+                        children: [
+                          Space.w132,
+                          const Spacer(),
+                          Text('Analytics', style: BS.med120),
+                          const Spacer(),
+                          Builder(builder: (context) {
+                            return CustomTwoButton(
+                              onDownload: () => bloc.downloadFile(context),
+                              onShare: () => bloc.shareFile(context),
+                            );
+                          }),
+                        ],
+                      ),
+                    ),
                     ClipRRect(
                       borderRadius: BRadius.r16,
                       child: Container(
@@ -201,7 +218,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                     ),
                                   ),
                                 ),
-                                 CustomContainerWhite(
+                                CustomContainerWhite(
                                   text: state.floorClear,
                                   width: 185,
                                 ),
@@ -211,10 +228,19 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      width: 150,
+                      height: 50,
+                      child: CustomButtonBig(
+                        text: 'Clear',
+                        onTap: () => bloc.removeTime(),
+                        color: BC.gray,
+                      ),
+                    ),
                     Space.h32,
                     SizedBox(
                       width: 260,
-                      height: 86,
+                      height: 80,
                       child: CustomButtonBig(
                         text: 'To Timers',
                         onTap: () => context.router.pop(),
@@ -224,5 +250,67 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                   ],
                 ));
         });
+  }
+}
+
+class CustomTwoButton extends StatelessWidget {
+  final Function()? onShare;
+  final Function()? onDownload;
+
+  const CustomTwoButton({super.key, this.onShare, this.onDownload});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BRadius.r16,
+        border: Border.all(color: BC.black),
+      ),
+      child: Column(
+        children: [
+          InkWell(
+            onTap: onShare,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              child: Center(
+                child: Row(
+                  children: [
+                    Text(
+                      'Share',
+                      style: BS.med16,
+                    ),
+                    Space.w8,
+                    const Icon(Icons.share),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Container(
+            height: 1,
+            width: 132,
+            color: BC.black,
+          ),
+          InkWell(
+            onTap: onDownload,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              child: Center(
+                child: Row(
+                  children: [
+                    Text(
+                      'Download',
+                      style: BS.med16,
+                    ),
+                    Space.w8,
+                    const Icon(Icons.download),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

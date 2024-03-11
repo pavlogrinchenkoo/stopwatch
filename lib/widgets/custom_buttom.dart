@@ -68,7 +68,7 @@ class CustomButtonBig extends StatelessWidget {
           borderRadius: BRadius.r90,
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 64, vertical: 29),
+            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
             child: Center(child: Text(text ?? '', style: BS.med24.copyWith(color: BC.white))),
           )),
     );
