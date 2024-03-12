@@ -47,25 +47,19 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
       return '00:00:00';
     }
 
-    int totalSeconds = 00;
-    int totalMinutes = 00;
-    int totalHours = 00;
+    int totalMilliseconds = 0;
     for (final time in timeList) {
-      totalSeconds += time.seconds;
-      totalMinutes += time.minutes;
-      totalHours += time.hours;
+      totalMilliseconds += time.milliseconds + time.seconds * 1000 + time.minutes * 60 * 1000;
     }
 
-    int averageSeconds = totalSeconds ~/ timeList.length;
-    int averageMinutes = totalMinutes ~/ timeList.length;
-    int averageHours = totalHours ~/ timeList.length;
+    int averageMilliseconds = totalMilliseconds ~/ timeList.length;
 
-    averageMinutes += averageSeconds ~/ 60;
+    int averageSeconds = averageMilliseconds ~/ 1000;
+    averageMilliseconds %= 1000;
+
+    int averageMinutes = averageSeconds ~/ 60;
     averageSeconds %= 60;
-    averageHours += averageMinutes ~/ 60;
-    averageMinutes %= 60;
-
-    return '${formatNumber(averageHours)}:${formatNumber(averageMinutes)}:${formatNumber(averageSeconds)}';
+    return '${formatNumber(averageMinutes)}:${formatNumber(averageSeconds)}:${formatNumber(averageMilliseconds ~/ 10)}';
   }
 
   String formatNumber(int number) {

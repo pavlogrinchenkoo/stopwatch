@@ -76,7 +76,7 @@ abstract class BS {
     letterSpacing: 0,
   );
 
-  static TextStyle get light32 => const TextStyle(
+  static TextStyle get light30 => const TextStyle(
     fontFamily: 'Roboto',
     fontSize: 30,
     fontWeight: FontWeight.w300,

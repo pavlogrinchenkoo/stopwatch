@@ -27,7 +27,7 @@ class _CustomTimerState extends State<CustomTimer> {
             children: [
               Text(widget.name, style: BS.reg48),
               Space.h16,
-              Text(state.time ?? '00:00:00', style: BS.reg90),
+              Text(state.time, style: BS.reg90),
               Space.h16,
               Row(
                 children: [

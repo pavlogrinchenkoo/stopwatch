@@ -5,11 +5,11 @@ part 'dto.g.dart';
 class TimeModel{
   int seconds;
   int minutes;
-  int hours;
+  int milliseconds;
   TimeModel({
      this.seconds = 00,
      this.minutes = 00,
-     this.hours = 00,
+     this.milliseconds = 00,
   });
 
   factory TimeModel.fromJson(Map<String, dynamic> json) => _$TimeModelFromJson(json);

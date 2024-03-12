@@ -103,9 +103,11 @@ class CustomContainerWhite extends StatelessWidget {
       decoration: BoxDecoration(
         border: border,
       ),
-      child: Text(
-        text ?? '00:00:00',
-        style: BS.light32,
+      child: Center(
+        child: Text(
+          text ?? '00:00:00',
+          style: BS.light30,
+        ),
       ),
     );
   }
