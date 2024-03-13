@@ -49,8 +49,7 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
 
     int totalMilliseconds = 0;
     for (final time in timeList) {
-      totalMilliseconds +=
-          time.milliseconds + time.seconds * 1000 + time.minutes * 60 * 1000;
+      totalMilliseconds += time.milliseconds + time.seconds * 1000 + time.minutes * 60 * 1000;
     }
 
     int averageMilliseconds = totalMilliseconds ~/ timeList.length;
@@ -70,11 +69,7 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
   Excel generateExcelFile() {
     final excel = Excel.createExcel();
 
-    // excel.copy('Sheet1', 'newlyCopied');
-
-    final Sheet sheet1 = excel['Sheet1'];
-    final Sheet sheet = excel["Analytics"];
-    excel.setDefaultSheet("Analytics");
+    final Sheet sheet = excel['Analytics'];
 
     sheet.cell(CellIndex.indexByString('A1')).value =
         const TextCellValue('Average Value');

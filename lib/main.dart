@@ -27,6 +27,10 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext buildContext) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
     return MaterialApp.router(
       localizationsDelegates: const [
         S.delegate,

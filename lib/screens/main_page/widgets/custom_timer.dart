@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quad_timer/generated/assets.gen.dart';
 import 'package:quad_timer/style.dart';
 import 'package:quad_timer/utils/custom_stream_builder.dart';
 import 'package:quad_timer/utils/spaces.dart';
@@ -8,8 +9,9 @@ import 'bloc_timer.dart';
 
 class CustomTimer extends StatefulWidget {
   final String name;
+  final Widget icon;
 
-  const CustomTimer({super.key, required this.name});
+  const CustomTimer({super.key, required this.name, required this.icon});
 
   @override
   State<CustomTimer> createState() => _CustomTimerState();
@@ -25,7 +27,13 @@ class _CustomTimerState extends State<CustomTimer> {
         builder: (BuildContext context, ScreenState state) {
           return Column(
             children: [
-              Text(widget.name, style: BS.reg48),
+              Row(
+                children: [
+                  widget.icon,
+                  Space.w24,
+                  Text(widget.name, style: BS.reg48),
+                ],
+              ),
               Space.h16,
               Text(state.time, style: BS.reg90),
               Space.h16,

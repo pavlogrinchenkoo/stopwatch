@@ -2,7 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quad_timer/generated/assets.gen.dart';
 import 'package:quad_timer/screens/main_page/widgets/custom_timer.dart';
 import 'package:quad_timer/style.dart';
 import 'package:quad_timer/utils/custom_stream_builder.dart';
@@ -45,7 +47,12 @@ class _MainPageState extends State<MainPage> {
                           left: 40, right: 30, top: 24, bottom: 24),
                       child: Column(
                         children: [
-                          const CustomTimer(
+                           CustomTimer(
+                            icon: Assets.images.vault.image(
+                              width: 56,
+                              height: 56,
+
+                            ),
                             name: 'VAULT',
                           ),
                           Space.h32,
@@ -55,7 +62,11 @@ class _MainPageState extends State<MainPage> {
                             color: BC.darkWhite,
                           ),
                           Space.h32,
-                          const CustomTimer(
+                           CustomTimer(
+                            icon: Assets.images.beam.image(
+                              width: 56,
+                              height: 56,
+                            ),
                             name: 'BEAM',
                           ),
                         ],
@@ -70,7 +81,11 @@ class _MainPageState extends State<MainPage> {
                           left: 30, right: 40, top: 24, bottom: 24),
                       child: Column(
                         children: [
-                          const CustomTimer(
+                           CustomTimer(
+                             icon: Assets.images.bars.image(
+                               width: 56,
+                               height: 56,
+                             ),
                             name: 'BARS',
                           ),
                           Space.h32,
@@ -80,7 +95,11 @@ class _MainPageState extends State<MainPage> {
                             color: BC.darkWhite,
                           ),
                           Space.h32,
-                          const CustomTimer(
+                           CustomTimer(
+                             icon: Assets.images.floors.image(
+                               width: 56,
+                               height: 56,
+                             ),
                             name: 'FLOOR',
                           ),
                         ],
