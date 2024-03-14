@@ -85,6 +85,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                 CustomContainerBlueMain(
                                   text: 'Average Value',
                                   width: 300,
+                                  b: const BorderRadius.only(topLeft: Radius.circular(16)),
                                   border: Border(
                                       bottom: BorderSide(
                                         color: BC.black,
@@ -128,6 +129,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                 CustomContainerBlueMain(
                                   text: 'Floor',
                                   width: 185,
+                                  b: const BorderRadius.only(topRight: Radius.circular(16)),
                                   border: Border(
                                       bottom: BorderSide(
                                     color: BC.black,
@@ -197,6 +199,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                                 CustomContainerBlueBig(
                                   text: 'Start to Сlear',
                                   width: 300,
+                                  b:  const BorderRadius.only(bottomLeft: Radius.circular(16)),
                                   border: Border(
                                       right: BorderSide(
                                     color: BC.black,
@@ -248,7 +251,7 @@ class _AnalyticsPageState extends State<AnalyticsPage> {
                     Space.h32,
                     SizedBox(
                       width: 260,
-                      height: 80,
+                      height: 62,
                       child: CustomButtonBig(
                         text: 'To Timers',
                         onTap: () => context.router.pop(),

@@ -6,9 +6,10 @@ class CustomContainerBlueMain extends StatelessWidget {
   final BoxBorder? border;
   final double? width;
   final double? height;
+  final BorderRadius? b;
 
   const CustomContainerBlueMain(
-      {super.key, required this.text, this.border, this.width, this.height});
+      {super.key, required this.text, this.border, this.width, this.height, this.b});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class CustomContainerBlueMain extends StatelessWidget {
       height: height,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 26),
       decoration: BoxDecoration(
+        borderRadius: b,
         color: BC.blue.withOpacity(0.2),
         border: border,
       ),
@@ -64,9 +66,10 @@ class CustomContainerBlueBig extends StatelessWidget {
   final BoxBorder? border;
   final double? width;
   final double? height;
+  final BorderRadius? b;
 
   const CustomContainerBlueBig(
-      {super.key, required this.text, this.border, this.width, this.height});
+      {super.key, required this.text, this.border, this.width, this.height, this.b});
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +78,7 @@ class CustomContainerBlueBig extends StatelessWidget {
       height: height,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       decoration: BoxDecoration(
+        borderRadius: b,
         color: BC.blue.withOpacity(0.2),
         border: border,
       ),

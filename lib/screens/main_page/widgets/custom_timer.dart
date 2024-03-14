@@ -25,60 +25,74 @@ class _CustomTimerState extends State<CustomTimer> {
     return CustomStreamBuilder(
         bloc: bloc,
         builder: (BuildContext context, ScreenState state) {
-          return Column(
-            children: [
-              Row(
-                children: [
-                  widget.icon,
-                  Space.w24,
-                  Text(widget.name, style: BS.reg48),
-                ],
-              ),
-              Space.h16,
-              Text(state.time, style: BS.reg90),
-              Space.h16,
-              Row(
-                children: [
-                  state.isStartTimer
-                      ? state.isPauseTimer
-                          ? CustomButton(
-                              text: 'Resume',
-                              onTap: () => bloc.resumeTimer(),
-                              color: BC.green,
-                            )
-                          : CustomButton(
-                              text: 'Pause',
-                              onTap: () => bloc.pauseTimer(),
-                              color: BC.red,
-                            )
-                      : CustomButton(
-                          text: 'Start',
-                          onTap: () => bloc.startTimer(),
-                          color: BC.green,
-                        ),
-                  Space.w24,
-                  state.isCueStartTimer
-                      ? CustomButtonCue(
-                          text: state.cueTime,
-                          onTap: () => bloc.cueStartTimer(
-                              '${widget.name.toLowerCase()}_cue'),
-                          color: BC.orange,
-                        )
-                      : CustomButton(
-                          text: 'Cue',
-                          onTap: () => bloc.cueStartTimer(
-                              '${widget.name.toLowerCase()}_cue'),
-                          color: BC.blue,
-                        ),
-                  Space.w24,
-                  CustomButton(
-                    text: 'Clear',
-                    onTap: () => bloc.clearTimer('${widget.name.toLowerCase()}_clear'),
-                    color: BC.gray,
-                  ),
-                ],
-              )
-            ],
+          return Container(
+            color: state.isCueStartTimer
+                ? state.isPauseTimer
+                    ? BC.lightRed
+                    : BC.lightOrange
+                : state.isStartTimer
+                    ? state.isPauseTimer
+                        ? BC.lightRed
+                        : BC.lightGreen
+                    : Colors.transparent,
+            padding:
+                const EdgeInsets.only(left: 40, right: 35, top: 35, bottom: 39),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    widget.icon,
+                    Space.w24,
+                    Text(widget.name, style: BS.reg48),
+                  ],
+                ),
+                Space.h16,
+                Text(state.time, style: BS.reg90),
+                Space.h16,
+                Row(
+                  children: [
+                    state.isStartTimer
+                        ? state.isPauseTimer
+                            ? CustomButton(
+                                text: 'Resume',
+                                onTap: () => bloc.resumeTimer(),
+                                color: BC.green,
+                              )
+                            : CustomButton(
+                                text: 'Pause',
+                                onTap: () => bloc.pauseTimer(),
+                                color: BC.red,
+                              )
+                        : CustomButton(
+                            text: 'Start',
+                            onTap: () => bloc.startTimer(),
+                            color: BC.green,
+                          ),
+                    Space.w24,
+                    state.isCueStartTimer
+                        ? CustomButtonCue(
+                            text: state.cueTime,
+                            onTap: () => bloc.cueStartTimer(
+                                '${widget.name.toLowerCase()}_cue'),
+                            color: BC.orange,
+                          )
+                        : CustomButton(
+                            text: 'Cue',
+                            onTap: () => bloc.cueStartTimer(
+                                '${widget.name.toLowerCase()}_cue'),
+                            color: BC.blue,
+                          ),
+                    Space.w24,
+                    CustomButton(
+                      text: 'Clear',
+                      onTap: () =>
+                          bloc.clearTimer('${widget.name.toLowerCase()}_clear'),
+                      color: BC.gray,
+                    ),
+                  ],
+                )
+              ],
+            ),
           );
         });
   }

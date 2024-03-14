@@ -42,68 +42,59 @@ class _MainPageState extends State<MainPage> {
               Expanded(
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 40, right: 30, top: 24, bottom: 24),
-                      child: Column(
-                        children: [
-                           CustomTimer(
-                            icon: Assets.images.vault.image(
-                              width: 56,
-                              height: 56,
+                    Column(
+                      children: [
+                         CustomTimer(
+                          icon: Assets.images.vault.image(
+                            width: 56,
+                            height: 56,
 
-                            ),
-                            name: 'VAULT',
                           ),
-                          Space.h32,
-                          Container(
-                            width: MediaQuery.of(context).size.width / 2.5,
-                            height: 2,
-                            color: BC.darkWhite,
+                          name: 'VAULT',
+                        ),
+
+                        Container(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          height: 2,
+                          color: BC.darkWhite,
+                        ),
+
+                         CustomTimer(
+                          icon: Assets.images.beam.image(
+                            width: 56,
+                            height: 56,
                           ),
-                          Space.h32,
-                           CustomTimer(
-                            icon: Assets.images.beam.image(
-                              width: 56,
-                              height: 56,
-                            ),
-                            name: 'BEAM',
-                          ),
-                        ],
-                      ),
+                          name: 'BEAM',
+                        ),
+                      ],
                     ),
                     Container(
                       width: 4,
                       color: BC.darkGray,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 30, right: 40, top: 24, bottom: 24),
-                      child: Column(
-                        children: [
-                           CustomTimer(
-                             icon: Assets.images.bars.image(
-                               width: 56,
-                               height: 56,
-                             ),
-                            name: 'BARS',
-                          ),
-                          Space.h32,
-                          Container(
-                            width: MediaQuery.of(context).size.width / 2.5,
-                            height: 2,
-                            color: BC.darkWhite,
-                          ),
-                          Space.h32,
-                           CustomTimer(
-                             icon: Assets.images.floors.image(
-                               width: 56,
-                               height: 56,
-                             ),
-                            name: 'FLOOR',
-                          ),
-                        ],
-                      ),
+                    Column(
+                      children: [
+                         CustomTimer(
+                           icon: Assets.images.bars.image(
+                             width: 56,
+                             height: 56,
+                           ),
+                          name: 'BARS',
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          height: 2,
+                          color: BC.darkWhite,
+                        ),
+
+                         CustomTimer(
+                           icon: Assets.images.floors.image(
+                             width: 56,
+                             height: 56,
+                           ),
+                          name: 'FLOOR',
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -115,14 +106,14 @@ class _MainPageState extends State<MainPage> {
               Space.h32,
               SizedBox(
                 width: 280,
-                height: 86,
+                height: 62,
                 child: CustomButtonBig(
                   onTap: () => bloc.goToAnalytics(context),
                   text: 'To Analytics',
                   color: BC.blue,
                 ),
               ),
-              Space.h32,
+              Space.h24,
             ],
           ));
         });

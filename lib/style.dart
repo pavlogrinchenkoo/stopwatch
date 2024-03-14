@@ -3,6 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ThemeColors {
   static const Color green = Color(0xff009D48);
+  static const Color lightGreen = Color(0xffEFFFE0);
+  static const Color lightOrange = Color(0xffFFE6CE);
+  static const Color lightRed = Color(0xffFFCECE);
   static const Color white = Color(0xffffffff);
   static const Color red = Color(0xffBD3636);
   static const Color blue = Color(0xff3662FF);
@@ -15,6 +18,12 @@ class ThemeColors {
 
 abstract class BC {
   static Color get green => ThemeColors.green;
+
+  static Color get lightGreen => ThemeColors.lightGreen;
+
+  static Color get lightOrange => ThemeColors.lightOrange;
+
+  static Color get lightRed => ThemeColors.lightRed;
 
   static Color get white => ThemeColors.white;
 
