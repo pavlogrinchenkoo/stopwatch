@@ -21,6 +21,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AnalyticsPage(),
       );
     },
+    CustomTimerIphoneRoute.name: (routeData) {
+      final args = routeData.argsAs<CustomTimerIphoneRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CustomTimerIphonePage(
+          key: args.key,
+          name: args.name,
+          icon: args.icon,
+        ),
+      );
+    },
     MainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -48,6 +59,49 @@ class AnalyticsRoute extends PageRouteInfo<void> {
   static const String name = 'AnalyticsRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CustomTimerIphonePage]
+class CustomTimerIphoneRoute extends PageRouteInfo<CustomTimerIphoneRouteArgs> {
+  CustomTimerIphoneRoute({
+    Key? key,
+    required String name,
+    required Widget icon,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CustomTimerIphoneRoute.name,
+          args: CustomTimerIphoneRouteArgs(
+            key: key,
+            name: name,
+            icon: icon,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CustomTimerIphoneRoute';
+
+  static const PageInfo<CustomTimerIphoneRouteArgs> page =
+      PageInfo<CustomTimerIphoneRouteArgs>(name);
+}
+
+class CustomTimerIphoneRouteArgs {
+  const CustomTimerIphoneRouteArgs({
+    this.key,
+    required this.name,
+    required this.icon,
+  });
+
+  final Key? key;
+
+  final String name;
+
+  final Widget icon;
+
+  @override
+  String toString() {
+    return 'CustomTimerIphoneRouteArgs{key: $key, name: $name, icon: $icon}';
+  }
 }
 
 /// generated route for

@@ -93,6 +93,16 @@ abstract class BS {
         ),
       );
 
+  static TextStyle get reg80 => GoogleFonts.roboto(
+    textStyle: const TextStyle(
+      fontFamily: 'Roboto',
+      fontSize: 80,
+      fontWeight: FontWeight.w400,
+      height: 1.175,
+      letterSpacing: 0,
+    ),
+  );
+
   static TextStyle get reg48 => GoogleFonts.roboto(
         textStyle: const TextStyle(
           fontFamily: 'Roboto',
@@ -112,6 +122,17 @@ abstract class BS {
           letterSpacing: 0,
         ),
       );
+
+  static TextStyle get light16 => GoogleFonts.roboto(
+    textStyle: const TextStyle(
+      fontFamily: 'Roboto',
+      fontSize: 16.0,
+      fontWeight: FontWeight.w300,
+      height: 1.188,
+      letterSpacing: 0,
+      color: Colors.black,
+    ),
+  );
 }
 
 abstract class BDuration {

@@ -14,11 +14,12 @@ class CustomScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: BC.white,
       appBar: appBar,
       bottomNavigationBar: bottomNavigationBar,
-      body: SafeArea(child: body),
+      body: height < 600 ? body : SafeArea(child: body),
     );
   }
 }

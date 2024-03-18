@@ -29,6 +29,33 @@ class CustomButton extends StatelessWidget {
   }
 }
 
+class CustomButtonPhone extends StatelessWidget {
+  const CustomButtonPhone({this.onTap, super.key, this.text, this.color});
+
+  final String? text;
+  final void Function()? onTap;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BRadius.r90,
+      color: color,
+      child: InkWell(
+          borderRadius: BRadius.r90,
+          onTap: onTap,
+          child: Container(
+            height: 40,
+            width: 100,
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Center(
+                child: Text(text ?? '',
+                    style: BS.med16.copyWith(color: BC.white))),
+          )),
+    );
+  }
+}
+
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget({this.onTap, super.key, this.text, this.color});
 

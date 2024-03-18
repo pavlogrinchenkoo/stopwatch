@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:quad_timer/api/cashe.dart';
 import 'package:quad_timer/api/time/dto.dart';
+import 'package:quad_timer/style.dart';
 import 'package:quad_timer/utils/bloc_base.dart';
 import 'package:quad_timer/widgets/custom_show_dialog.dart';
 import 'package:quad_timer/widgets/snack_bar.dart';
@@ -49,7 +50,8 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
 
     int totalMilliseconds = 0;
     for (final time in timeList) {
-      totalMilliseconds += time.milliseconds + time.seconds * 1000 + time.minutes * 60 * 1000;
+      totalMilliseconds +=
+          time.milliseconds + time.seconds * 1000 + time.minutes * 60 * 1000;
     }
 
     int averageMilliseconds = totalMilliseconds ~/ timeList.length;
@@ -144,7 +146,10 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
               title: 'Enter File Name',
               text: TextField(
                 controller: controller,
+                autofocus: true,
+                style: BS.light16,
                 decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.all(8.0),
                   border: OutlineInputBorder(),
                   hintText: 'Enter file name',
                 ),
