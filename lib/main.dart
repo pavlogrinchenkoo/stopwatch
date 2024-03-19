@@ -8,6 +8,9 @@ import 'generated/l10n.dart';
 import 'routers/routes.dart';
 import 'utils/portrait_modeM_mxin.dart';
 
+double height = 0;
+double width = 0;
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -27,6 +30,8 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext buildContext) {
+    height = MediaQuery.of(buildContext).size.height;
+    width = MediaQuery.of(buildContext).size.width;
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,

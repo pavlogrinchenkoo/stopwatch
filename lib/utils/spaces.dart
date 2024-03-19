@@ -1,37 +1,39 @@
 import 'package:flutter/material.dart';
 
+import 'custom_functions.dart';
+
 class Space {
-  static Widget get w167 => const _SpaceWidget(width: 167);
+  static Widget get w167 =>  _SpaceWidget(width: getAdaptivePadding(167));
 
-  static Widget get w52 => const _SpaceWidget(width: 52);
+  static Widget get w52 =>  _SpaceWidget(width: getAdaptivePadding(52));
 
-  static Widget get w32 => const _SpaceWidget(width: 32);
+  static Widget get w32 =>  _SpaceWidget(width: getAdaptivePadding(32));
 
-  static Widget get w24 => const _SpaceWidget(width: 24);
+  static Widget get w24 =>  _SpaceWidget(width: getAdaptivePadding(24));
 
-  static Widget get w22 => const _SpaceWidget(width: 22);
+  static Widget get w22 =>  _SpaceWidget(width: getAdaptivePadding(22));
 
-  static Widget get w20 => const _SpaceWidget(width: 20);
+  static Widget get w20 =>  _SpaceWidget(width:   getAdaptivePadding(20));
 
-  static Widget get w16 => const _SpaceWidget(width: 16);
+  static Widget get w16 =>  _SpaceWidget(width: getAdaptivePadding(16));
 
-  static Widget get w8 => const _SpaceWidget(width: 8);
+  static Widget get w8 =>  _SpaceWidget(width: getAdaptivePadding(8));
 
-  static Widget get w4 => const _SpaceWidget(width: 4);
+  static Widget get w4 =>  _SpaceWidget(width: getAdaptivePadding(4));
 
-  static Widget get h140 => const _SpaceWidget(height: 140);
+  static Widget get h140 =>  _SpaceWidget(height: getAdaptivePadding(140));
 
-  static Widget get h96 => const _SpaceWidget(height: 96);
+  static Widget get h96 =>  _SpaceWidget(height: getAdaptivePadding(96));
 
-  static Widget get h32 => const _SpaceWidget(height: 32);
+  static Widget get h32 =>  _SpaceWidget(height:  getAdaptivePadding(32));
 
-  static Widget get h24 => const _SpaceWidget(height: 24);
+  static Widget get h24 =>  _SpaceWidget(height:  getAdaptivePadding(24));
 
-  static Widget get h20 => const _SpaceWidget(height: 20);
+  static Widget get h20 =>  _SpaceWidget(height:  getAdaptivePadding(20));
 
-  static Widget get h16 => const _SpaceWidget(height: 16);
+  static Widget get h16 =>  _SpaceWidget(height:  getAdaptivePadding(16));
 
-  static Widget get h8 => const _SpaceWidget(height: 8);
+  static Widget get h8 =>  _SpaceWidget(height:  getAdaptivePadding(8));
 }
 
 class _SpaceWidget extends StatelessWidget {

@@ -64,7 +64,7 @@ class TimerBloc extends BlocBaseWithState<ScreenState> {
           milliseconds: milliseconds ~/ 10,
           // Display milliseconds correctly
           time:
-              '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}:${(milliseconds ~/ 10).toString().padLeft(2, '0')}',
+          (!currentState.isCueStartTimer) ? '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}:${(milliseconds ~/ 10).toString().padLeft(2, '0')}' : '00:00:00',
           secondsCue: secondsCue,
           minutesCue: minutesCue,
           millisecondsCue: milliseconds ~/ 10,

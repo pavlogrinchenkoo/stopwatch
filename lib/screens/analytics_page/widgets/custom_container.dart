@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quad_timer/style.dart';
+import 'package:quad_timer/utils/custom_functions.dart';
 
 class CustomContainerBlueMain extends StatelessWidget {
   final String text;
@@ -16,7 +17,7 @@ class CustomContainerBlueMain extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 26),
+      padding:  EdgeInsets.symmetric(horizontal: getAdaptivePadding(20), vertical: getAdaptivePadding(26)),
       decoration: BoxDecoration(
         borderRadius: b,
         color: BC.blue.withOpacity(0.2),
@@ -45,8 +46,8 @@ class CustomContainerBlue extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 
-      width: 183,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 26),
+      width: getAdaptivePadding(183),
+      padding:  EdgeInsets.symmetric(horizontal: getAdaptivePadding(20), vertical: getAdaptivePadding(26)),
       decoration: BoxDecoration(
         color: BC.blue.withOpacity(0.2),
         border: border,
@@ -76,7 +77,7 @@ class CustomContainerBlueBig extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      padding:  EdgeInsets.symmetric(horizontal: getAdaptivePadding(20), vertical: getAdaptivePadding(40)),
       decoration: BoxDecoration(
         borderRadius: b,
         color: BC.blue.withOpacity(0.2),
@@ -102,8 +103,8 @@ class CustomContainerWhite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? 183,
-      padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 40),
+      width: width ?? getAdaptivePadding(183),
+      padding:  EdgeInsets.symmetric(horizontal: getAdaptivePadding(20), vertical: getAdaptivePadding(38)),
       decoration: BoxDecoration(
         border: border,
       ),
@@ -192,8 +193,8 @@ class CustomContainerWhitePhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? 183,
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      width: width ??  183,
+      padding:  EdgeInsets.symmetric(horizontal: 10, vertical: 14),
       decoration: BoxDecoration(
         border: border,
       ),

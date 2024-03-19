@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quad_timer/generated/assets.gen.dart';
 import 'package:quad_timer/style.dart';
+import 'package:quad_timer/utils/custom_functions.dart';
 import 'package:quad_timer/utils/custom_stream_builder.dart';
 import 'package:quad_timer/utils/spaces.dart';
 import 'package:quad_timer/widgets/custom_buttom.dart';
@@ -35,10 +36,10 @@ class _CustomTimerState extends State<CustomTimer> {
                 : state.isStartTimer
                     ? state.isPauseTimer
                         ? BC.lightRed
-                        : BC.lightGreen
+                        : BC.lightRed
                     : Colors.transparent,
             padding:
-                const EdgeInsets.only(left: 40, right: 35, top: 35, bottom: 39),
+                 EdgeInsets.only(left: getAdaptivePadding(40), right: getAdaptivePadding(35), top: getAdaptivePadding(20), bottom: getAdaptivePadding(20)),
             child: Column(
               children: [
                 Row(
@@ -128,7 +129,7 @@ class _CustomTimerIphonePageState extends State<CustomTimerIphonePage> {
                 : state.isStartTimer
                     ? state.isPauseTimer
                         ? BC.lightRed
-                        : BC.lightGreen
+                        : BC.lightRed
                     : Colors.transparent,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
             child: Column(

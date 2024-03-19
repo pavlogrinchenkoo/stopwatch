@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'utils/custom_functions.dart';
+
 class ThemeColors {
   static const Color green = Color(0xff009D48);
   static const Color lightGreen = Color(0xffEFFFE0);
@@ -43,10 +45,10 @@ abstract class BC {
 }
 
 abstract class BS {
-  static TextStyle get med120 => GoogleFonts.roboto(
-        textStyle: const TextStyle(
+  static TextStyle get med90 => GoogleFonts.roboto(
+        textStyle: TextStyle(
           fontFamily: 'Roboto',
-          fontSize: 120,
+          fontSize: getAdaptiveFontSize(90),
           fontWeight: FontWeight.w500,
           height: 1.175,
           letterSpacing: 0,
@@ -54,9 +56,9 @@ abstract class BS {
       );
 
   static TextStyle get med32 => GoogleFonts.roboto(
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           fontFamily: 'Roboto',
-          fontSize: 32,
+          fontSize: getAdaptiveFontSize(32),
           fontWeight: FontWeight.w500,
           height: 1.1875,
           letterSpacing: 0,
@@ -64,19 +66,29 @@ abstract class BS {
       );
 
   static TextStyle get med24 => GoogleFonts.roboto(
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           fontFamily: 'Roboto',
-          fontSize: 24,
+          fontSize: getAdaptiveFontSize(24),
           fontWeight: FontWeight.w500,
           height: 1.1667,
           letterSpacing: 0,
         ),
       );
 
+  static TextStyle get med20 => GoogleFonts.roboto(
+    textStyle: TextStyle(
+      fontFamily: 'Roboto',
+      fontSize: getAdaptiveFontSize(20),
+      fontWeight: FontWeight.w500,
+      height: 1.2,
+      letterSpacing: 0.0,
+    ),
+  );
+
   static TextStyle get med16 => GoogleFonts.roboto(
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           fontFamily: 'Roboto',
-          fontSize: 16.0,
+          fontSize: getAdaptiveFontSize(16),
           fontWeight: FontWeight.w500,
           height: 1.2,
           letterSpacing: 0.0,
@@ -84,9 +96,9 @@ abstract class BS {
       );
 
   static TextStyle get reg90 => GoogleFonts.roboto(
-        textStyle: const TextStyle(
+        textStyle: TextStyle(
           fontFamily: 'Roboto',
-          fontSize: 90,
+          fontSize: getAdaptiveFontSize(90),
           fontWeight: FontWeight.w400,
           height: 1.175,
           letterSpacing: 0,
@@ -94,42 +106,42 @@ abstract class BS {
       );
 
   static TextStyle get reg80 => GoogleFonts.roboto(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontFamily: 'Roboto',
-      fontSize: 80,
+      fontSize: getAdaptiveFontSize(80),
       fontWeight: FontWeight.w400,
-      height: 1.175,
-      letterSpacing: 0,
+      // height: 1.175,
+      // letterSpacing: 0,
     ),
   );
 
   static TextStyle get reg48 => GoogleFonts.roboto(
-        textStyle: const TextStyle(
+        textStyle:  TextStyle(
           fontFamily: 'Roboto',
-          fontSize: 48,
+          fontSize: getAdaptiveFontSize(48),
           fontWeight: FontWeight.w400,
-          height: 1.17,
-          letterSpacing: 0,
+          // height: 1.17,
+          // letterSpacing: 0,
         ),
       );
 
   static TextStyle get light30 => GoogleFonts.roboto(
-        textStyle: const TextStyle(
+        textStyle:  TextStyle(
           fontFamily: 'Roboto',
-          fontSize: 30,
+          fontSize: getAdaptiveFontSize(30),
           fontWeight: FontWeight.w300,
-          height: 1.188,
-          letterSpacing: 0,
+          // height: 1.188,
+          // letterSpacing: 0,
         ),
       );
 
   static TextStyle get light16 => GoogleFonts.roboto(
-    textStyle: const TextStyle(
+    textStyle:  TextStyle(
       fontFamily: 'Roboto',
-      fontSize: 16.0,
+      fontSize: getAdaptiveFontSize(16),
       fontWeight: FontWeight.w300,
-      height: 1.188,
-      letterSpacing: 0,
+      // height: 1.188,
+      // letterSpacing: 0,
       color: Colors.black,
     ),
   );
