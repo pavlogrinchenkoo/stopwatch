@@ -89,6 +89,9 @@ class TimerBloc extends BlocBaseWithState<ScreenState> {
 
   void cueStartTimer(String key) {
     if (currentState.isStartTimer) {
+      if(currentState.isCueStartTimer) {
+        return;
+      }
       final timeModel = TimeModel(
           seconds: currentState.seconds,
           minutes: currentState.minutes,
