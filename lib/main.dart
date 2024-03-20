@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:quad_timer/style.dart';
+import 'package:window_size/window_size.dart';
 
 import 'generated/l10n.dart';
 import 'routers/routes.dart';
@@ -14,7 +17,13 @@ double width = 0;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight])
+  if (Platform.isWindows) {
+    setWindowMaxSize(const Size(1400, 1024));
+    setWindowMinSize(const Size(1400, 1024));
+  }
+
+  SystemChrome.setPreferredOrientations(
+          [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight])
       .then((value) => runApp(App()));
 }
 

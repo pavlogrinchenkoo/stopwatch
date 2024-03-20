@@ -28,6 +28,10 @@ dependencies:
   share_plus: ^7.2.2
   excel: ^4.0.0
   google_fonts: ^6.2.1
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding.git
+      path: plugins/window_size
 
 dev_dependencies:
   flutter_test:
@@ -42,6 +46,10 @@ flutter_launcher_icons:
   ios: true
   remove_alpha_ios: true
   image_path: "assets/images/logo.png"
+  windows:
+    generate: true
+    image_path: "assets/images/logo.png"
+    icon_size: 48 # min:48, max:256, default: 48
 
   flutter_lints: ^2.0.0
 
@@ -50,7 +58,6 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/icons/
 
 #  fonts:
 #    - family: SFPro
