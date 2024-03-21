@@ -71,7 +71,7 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
   Excel generateExcelFile() {
     final excel = Excel.createExcel();
 
-    final Sheet sheet = excel['Analytics'];
+    final Sheet sheet = excel['Sheet1'];
 
     sheet.cell(CellIndex.indexByString('A1')).value =
         const TextCellValue('Average Value');
