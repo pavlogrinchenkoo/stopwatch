@@ -45,7 +45,7 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
 
   String calculateAverageTime(List<TimeModel> timeList) {
     if (timeList.isEmpty) {
-      return '00:00:00';
+      return '00:00';
     }
 
     int totalMilliseconds = 0;
@@ -61,7 +61,7 @@ class AnalyticsBloc extends BlocBaseWithState<ScreenState> {
 
     int averageMinutes = averageSeconds ~/ 60;
     averageSeconds %= 60;
-    return '${formatNumber(averageMinutes)}:${formatNumber(averageSeconds)}:${formatNumber(averageMilliseconds ~/ 10)}';
+    return '${formatNumber(averageMinutes)}:${formatNumber(averageSeconds)}';
   }
 
   String formatNumber(int number) {

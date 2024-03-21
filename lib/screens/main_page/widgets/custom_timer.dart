@@ -64,12 +64,12 @@ class _CustomTimerState extends State<CustomTimer> {
                             : CustomButton(
                                 text: 'Pause',
                                 onTap: () => bloc.pauseTimer(),
-                                color: BC.red,
+                                color: BC.gray,
                               )
                         : CustomButton(
-                            text: 'Start',
+                            text: 'Hold',
                             onTap: () => bloc.startTimer(),
-                            color: BC.green,
+                            color: BC.red,
                           ),
                     Space.w24,
                     state.isCueStartTimer
@@ -90,7 +90,7 @@ class _CustomTimerState extends State<CustomTimer> {
                       text: 'Clear',
                       onTap: () =>
                           bloc.clearTimer('${widget.name.toLowerCase()}_clear'),
-                      color: BC.gray,
+                      color: BC.green,
                     ),
                   ],
                 )
@@ -160,12 +160,12 @@ class _CustomTimerIphonePageState extends State<CustomTimerIphonePage> {
                             : CustomButton(
                                 text: 'Pause',
                                 onTap: () => bloc.pauseTimer(),
-                                color: BC.red,
+                                color: BC.gray,
                               )
                         : CustomButton(
-                            text: 'Start',
+                            text: 'Hold',
                             onTap: () => bloc.startTimer(),
-                            color: BC.green,
+                            color: BC.red,
                           ),
                     Space.h24,
                     state.isCueStartTimer
@@ -186,7 +186,7 @@ class _CustomTimerIphonePageState extends State<CustomTimerIphonePage> {
                       text: 'Clear',
                       onTap: () =>
                           bloc.clearTimer('${widget.name.toLowerCase()}_clear'),
-                      color: BC.gray,
+                      color: BC.green,
                     ),
                   ],
                 )

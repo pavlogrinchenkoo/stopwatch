@@ -64,13 +64,13 @@ class TimerBloc extends BlocBaseWithState<ScreenState> {
           milliseconds: milliseconds ~/ 10,
           // Display milliseconds correctly
           time:
-          (!currentState.isCueStartTimer) ? '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}:${(milliseconds ~/ 10).toString().padLeft(2, '0')}' : '00:00:00',
+          (!currentState.isCueStartTimer) ? '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}' : '00:00',
           secondsCue: secondsCue,
           minutesCue: minutesCue,
           millisecondsCue: milliseconds ~/ 10,
           // Display milliseconds correctly
           cueTime:
-              '${minutesCue.toString().padLeft(2, '0')}:${secondsCue.toString().padLeft(2, '0')}:${(milliseconds ~/ 10).toString().padLeft(2, '0')}',
+              '${minutesCue.toString().padLeft(2, '0')}:${secondsCue.toString().padLeft(2, '0')}',
           secondsAll: secondsAll,
           minutesAll: minutesAll,
           millisecondsAll: milliseconds ~/ 10, // Display milliseconds correctly
@@ -123,8 +123,8 @@ class TimerBloc extends BlocBaseWithState<ScreenState> {
       isPauseTimer: false,
       isCueStartTimer: false,
       isCueTap: false,
-      time: '00:00:00',
-      cueTime: '00:00:00',
+      time: '00:00',
+      cueTime: '00:00',
     ));
   }
 }
@@ -160,8 +160,8 @@ class ScreenState {
     this.secondsAll = 0,
     this.minutesAll = 0,
     this.millisecondsAll = 0,
-    this.time = '00:00:00',
-    this.cueTime = '00:00:00',
+    this.time = '00:00',
+    this.cueTime = '00:00',
   });
 
   ScreenState copyWith(
