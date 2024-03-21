@@ -59,7 +59,7 @@ class _CustomTimerState extends State<CustomTimer> {
                             ? CustomButton(
                                 text: 'Resume',
                                 onTap: () => bloc.resumeTimer(),
-                                color: BC.green,
+                                color: BC.red,
                               )
                             : CustomButton(
                                 text: 'Pause',
@@ -155,7 +155,7 @@ class _CustomTimerIphonePageState extends State<CustomTimerIphonePage> {
                             ? CustomButton(
                                 text: 'Resume',
                                 onTap: () => bloc.resumeTimer(),
-                                color: BC.green,
+                                color: BC.red,
                               )
                             : CustomButton(
                                 text: 'Pause',
